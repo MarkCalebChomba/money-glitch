@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator Betting Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-plane"></i>
+                    <span>Aviator</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <a href="profile.html" class="profile-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <div class="account-info">
+                    <div id="balance">Balance: $1000</div>
+                    <div id="total-pnl">Total PNL: $0</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="game-container">
+        <div class="game-header">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Last Crash: </span>
+                    <span id="last-crash" class="stat-value">x1.92</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <span>High Score: </span>
+                    <span id="high-score" class="stat-value">x10.00</span>
+                </div>
+            </div>
+        </div>
+
+        <section id="animation">
+            <h2>Plane Animation</h2>
+            <div id="plane-container">
+                <div class="grid-background"></div>
+                <div id="multiplier">x1.00</div>
+                <div id="countdown">Next flight in: 10s</div>
+                <img id="plane" src="plane.png" alt="Plane Icon">
+            </div>
+        </section>
+
+        <section id="betting-controls">
+            <div class="betting-form">
+                <div class="status-bar">
+                    <div id="bet-status">No Active Bet</div>
+                    <div id="result-message"></div>
+                </div>
+                
+                <div class="main-controls">
+                    <button id="place-bet">Place Bet</button>
+                    <div class="stake-input">
+                        <span>$</span>
+                        <input type="number" id="stake-input" min="10" max="10000" value="10">
+                    </div>
+                    
+                    <button id="cash-out" disabled>
+                        Cash Out
+                        <span class="profit-amount">$0.00</span>
+                    </button>
+                </div>
+                
+                <div class="slider-container">
+                    <div class="slider-and-quick">
+                        <input type="range" id="bet-amount" min="10" max="10000" step="10" value="10">
+                        <div class="quick-amounts">
+                            <button class="quick-amount low" data-value="10">$10</button>
+                            <button class="quick-amount medium" data-value="100">$100</button>
+                            <button class="quick-amount high" data-value="1000">$1K</button>
+                            <button class="quick-amount max" data-value="10000">MAX</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="autobet-controls">
+                    <div class="autobet-header">
+                        <h3>Auto Bet</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="autobet-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="autobet-settings">
+                        <div class="setting-group">
+                            <label>Stake:</label>
+                            <input type="number" id="auto-stake" min="10" step="10" value="10">
+                        </div>
+                        <div class="setting-group">
+                            <label>Exit at:</label>
+                            <input type="number" id="auto-cashout" min="1.0" step="0.1" value="2.0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-history">
+            <h3><i class="fas fa-history"></i> Recent Results</h3>
+            <div class="history-list">
+                <div class="history-item win">x2.31</div>
+                <div class="history-item lose">x1.12</div>
+                <div class="history-item win">x4.20</div>
+                <div class="history-item win">x1.88</div>
+                <div class="history-item lose">x1.05</div>
+            </div>
+        </section>
+
+        <section class="live-bets">
+            <h3><i class="fas fa-users"></i> Live Bets</h3>
+            <div class="bets-table">
+                <div class="bet-header">
+                    <span>Player</span>
+                    <span>Bet</span>
+                    <span>Multiplier</span>
+                    <span>Payout</span>
+                </div>
+                <div class="bet-list" id="live-bets-list">
+                    <!-- Will be populated dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">How to Play</a>
+                <a href="#">Fair Game</a>
+                <a href="#">Terms</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h4>Social</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Aviator. All rights reserved.</p>
+            <p>Play responsibly</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

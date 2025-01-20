@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Aviator Betting Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Profile</h1>
+        <div class="account-info">
+            <div id="balance">Balance: $1000</div>
+            <div id="total-pnl">Total PNL: $0</div>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <nav class="profile-nav">
+            <button class="nav-btn active" data-tab="profile">Profile</button>
+            <button class="nav-btn" data-tab="transactions">Transactions</button>
+            <button class="nav-btn" data-tab="payments">Payments</button>
+            <a href="index.html" class="nav-btn">Back to Game</a>
+        </nav>
+
+        <section id="profile" class="profile-section active">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <img src="avatar-placeholder.png" alt="Profile" class="profile-avatar">
+                    <h2>User Name</h2>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Bets</span>
+                        <span class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Win Rate</span>
+                        <span class="stat-value">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Highest Win</span>
+                        <span class="stat-value">$0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="transactions" class="profile-section">
+            <div class="transaction-history">
+                <h3>Transaction History</h3>
+                <div class="transaction-list">
+                    <!-- Transactions will be populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <section id="payments" class="profile-section">
+            <div class="payment-methods">
+                <div class="mpesa-section">
+                    <h3>M-PESA</h3>
+                    
+                    <div class="payment-actions">
+                        <div class="deposit-form">
+                            <h4>Deposit</h4>
+                            <input type="tel" placeholder="Enter Phone Number" pattern="[0-9]{10}" maxlength="10">
+                            <input type="number" placeholder="Amount (KES)" min="10" step="1">
+                            <button class="mpesa-btn deposit">Deposit via M-PESA</button>
+                        </div>
+
+                        <div class="withdraw-form">
+                            <h4>Withdraw</h4>
+                            <input type="tel" placeholder="Enter Phone Number" pattern="[0-9]{10}" maxlength="10">
+                            <input type="number" placeholder="Amount (KES)" min="50" step="1">
+                            <button class="mpesa-btn withdraw">Withdraw to M-PESA</button>
+                        </div>
+                    </div>
+
+                    <div class="payment-info">
+                        <p>Min Deposit: KES 10</p>
+                        <p>Min Withdrawal: KES 50</p>
+                        <p>Processing Time: Instant</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="profile.js"></script>
+</body>
+</html>
